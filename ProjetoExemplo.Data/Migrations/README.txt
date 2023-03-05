@@ -1,0 +1,1 @@
+Caso seja utilizado algum ORM que gere migrations, por exemplo, Entity Framework.
