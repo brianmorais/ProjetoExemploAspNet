@@ -3,7 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using ProjetoExemplo.Application.Commands;
 using ProjetoExemplo.Application.Interfaces;
 using ProjetoExemplo.Data.Repositories;
-using ProjetoExemplo.Domain.Interfaces;
+using ProjetoExemplo.Domain.Interfaces.Repositories;
+using ProjetoExemplo.Domain.Interfaces.Services;
+using ProjetoExemplo.Services.ViaCep;
 
 namespace ProjetoExemplo.Ioc;
 
@@ -13,5 +15,10 @@ public class Setup
     {
         services.AddScoped<IPersonRepository, PersonRepository>();
         services.AddScoped<IPersonCommand, PersonCommand>();
+        services.AddScoped<ICepCommand, CepCommand>();
+
+        var viaCepUrl = configuration["ServiceUrls:ViaCep"] ?? string.Empty;
+        services.AddHttpClient<ICepService, CepService>(options =>
+            options.BaseAddress = new Uri(viaCepUrl));
     }
 }

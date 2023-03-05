@@ -1,1 +1,1 @@
-Caso haja necessidade de mapear as entidades de domínio para entidades de baco de dados, são criadas classes nesse diretório para isso.
+Caso haja necessidade de mapear as entidades de domínio para entidades de banco de dados, são criadas classes nesse diretório para isso.

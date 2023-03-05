@@ -1,6 +1,6 @@
 using ProjetoExemplo.Domain.Entities;
 
-namespace ProjetoExemplo.Domain.Interfaces;
+namespace ProjetoExemplo.Domain.Interfaces.Repositories;
 
 public interface IPersonRepository
 {

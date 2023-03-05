@@ -1,7 +1,7 @@
 using ProjetoExemplo.Application.Models;
 using ProjetoExemplo.Application.Interfaces;
 using ProjetoExemplo.Domain.Entities;
-using ProjetoExemplo.Domain.Interfaces;
+using ProjetoExemplo.Domain.Interfaces.Repositories;
 
 namespace ProjetoExemplo.Application.Commands;
 
