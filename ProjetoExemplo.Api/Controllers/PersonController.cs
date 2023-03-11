@@ -8,7 +8,7 @@ namespace ProjetoExemplo.Api.Controllers;
 [Route("api/persons")]
 public class PersonController : ControllerBase
 {
-    private IPersonCommand _personCommand;
+    private readonly IPersonCommand _personCommand;
     private readonly ILogger<PersonController> _logger;
 
     public PersonController(ILogger<PersonController> logger, IPersonCommand personCommand)

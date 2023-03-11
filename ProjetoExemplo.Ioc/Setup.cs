@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProjetoExemplo.Application;
 using ProjetoExemplo.Application.Commands;
 using ProjetoExemplo.Application.Interfaces;
 using ProjetoExemplo.Data;
@@ -16,6 +17,8 @@ public class Setup
     public static void Configure(IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("InMemory"));
+
+        services.AddAutoMapper(typeof(MappingSetup));
 
         services.AddScoped<IPersonRepository, PersonRepository>();
         services.AddScoped<IPersonCommand, PersonCommand>();

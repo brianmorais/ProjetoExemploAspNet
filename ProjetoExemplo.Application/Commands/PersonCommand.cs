@@ -2,53 +2,34 @@ using ProjetoExemplo.Application.Models;
 using ProjetoExemplo.Application.Interfaces;
 using ProjetoExemplo.Domain.Entities;
 using ProjetoExemplo.Domain.Interfaces.Repositories;
+using AutoMapper;
 
 namespace ProjetoExemplo.Application.Commands;
 
 public class PersonCommand : IPersonCommand
 {
-    private IPersonRepository _personRepository;
+    private readonly IPersonRepository _personRepository;
+    private readonly IMapper _mapper;
 
-    public PersonCommand(IPersonRepository personRepository)
+    public PersonCommand(IPersonRepository personRepository, IMapper mapper)
     {
         _personRepository = personRepository;
+        _mapper = mapper;
     }
 
     public async Task<IEnumerable<PersonModel>> GetPersons()
     {
         var persons = await _personRepository.GetPersons();
-
-        // Mapeamento do objeto de domínio para o Model, pode ser feito com AutoMapper ou qualquer outra biblioteca também.
-        var personsModel = new List<PersonModel>();
-        foreach (var person in persons)
-        {
-            personsModel.Add(new PersonModel
-            {
-                Id = person.Id,
-                Name = person.Name
-            });
-        }
-
+        var personsModel = _mapper.Map<IEnumerable<PersonModel>>(persons);
         return personsModel;
     }
 
     public async Task<PersonModel> AddPerson(PersonModel personModel)
     {
-        // Mapeamento do Model para o objeto de domínio, pode ser feito com AutoMapper ou qualquer outra biblioteca também.
-        var person = new Person
-        {
-            Name = personModel.Name
-        };
-
+        var person = _mapper.Map<Person>(personModel);
         person = await _personRepository.AddPerson(person);
 
-        // Mapeamento do objeto de domínio para o Model, pode ser feito com AutoMapper ou qualquer outra biblioteca também.
-        personModel = new PersonModel
-        {
-            Id = person.Id,
-            Name = person.Name
-        };
-
+        personModel = _mapper.Map<PersonModel>(person);
         return personModel;
     }
 }

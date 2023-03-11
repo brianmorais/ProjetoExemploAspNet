@@ -8,7 +8,7 @@ namespace ProjetoExemplo.Api.Controllers;
 [Route("api/cep")]
 public class CepController : ControllerBase
 {
-    private ICepCommand _cepCommand;
+    private readonly ICepCommand _cepCommand;
     private readonly ILogger<CepController> _logger;
 
     public CepController(ILogger<CepController> logger, ICepCommand cepCommand)
