@@ -1,23 +1,26 @@
-﻿using ProjetoExemplo.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoExemplo.Domain.Entities;
 using ProjetoExemplo.Domain.Interfaces.Repositories;
 
 namespace ProjetoExemplo.Data.Repositories;
 
 public class PersonRepository : IPersonRepository
 {
-    // Faz a leitura no banco utilizando Entity Framework, Dapper, ADO.NET ou de qualquer outra forma que preferir.
-    public async Task<IEnumerable<Person>> GetPersons()
+    private readonly ApplicationDbContext _dbContext;
+    public PersonRepository(ApplicationDbContext dbContext)
     {
-        // Simulando um processo assíncrono.
-        await Task.CompletedTask;
-        return new List<Person>();
+        _dbContext = dbContext;
     }
 
-    // Faz a inserção no banco utilizando Entity Framework, Dapper, ADO.NET ou de qualquer outra forma que preferir.
+    public async Task<IEnumerable<Person>> GetPersons()
+    {
+        return await _dbContext.Persons.ToListAsync();
+    }
+
     public async Task<Person> AddPerson(Person person)
     {
-        // Simulando um processo assíncrono.
-        await Task.CompletedTask;
+        await _dbContext.AddAsync(person);
+        await _dbContext.SaveChangesAsync();
         return person;
     }
 }

@@ -1,7 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjetoExemplo.Application.Commands;
 using ProjetoExemplo.Application.Interfaces;
+using ProjetoExemplo.Data;
 using ProjetoExemplo.Data.Repositories;
 using ProjetoExemplo.Domain.Interfaces.Repositories;
 using ProjetoExemplo.Domain.Interfaces.Services;
@@ -13,6 +15,8 @@ public class Setup
 {
     public static void Configure(IServiceCollection services, IConfiguration configuration)
     {
+        services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("InMemory"));
+
         services.AddScoped<IPersonRepository, PersonRepository>();
         services.AddScoped<IPersonCommand, PersonCommand>();
         services.AddScoped<ICepCommand, CepCommand>();
