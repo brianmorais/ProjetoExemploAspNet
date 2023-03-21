@@ -2,12 +2,12 @@ version: '3'
 
 services:
 
-  product_api:
+  api:
     image: projetoexemplo/api
     container_name: api
     build:
       context: .
-      dockerfile: ./ProjetoExemplo.Api/Dockerfile
+      dockerfile: Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://*:8080
