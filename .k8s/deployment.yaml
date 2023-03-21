@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projeto
+  labels:
+    app: projeto
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: projeto
+  template:
+    metadata:
+      labels:
+        app: projeto
+    spec:
+      containers:
+      - name: projeto
+        image: moraisbrian/projetoexemplo:0.1
+        ports:
+        - containerPort: 8080
+          name: projeto
+        env:
+          - name: ASPNETCORE_ENVIRONMENT 
+            value: Development
+          - name: ASPNETCORE_URLS
+            value: http://*:8080
+          - name: ViaCep 
+            value: https://viacep.com.br
