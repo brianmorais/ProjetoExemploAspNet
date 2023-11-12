@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: projeto
+  name: projeto-svc
   labels:
     app: projeto
 spec:
@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: projeto
-        image: moraisbrian/projetoexemplo:0.1
+        image: moraisbrian/projetoexemplo:latest
         ports:
         - containerPort: 8080
           name: projeto
