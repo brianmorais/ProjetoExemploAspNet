@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProjetoExemplo.Application\ProjetoExemplo.Application.csproj" />
     <ProjectReference Include="..\ProjetoExemplo.Domain\ProjetoExemplo.Domain.csproj" />
+    <ProjectReference Include="..\ProjetoExemplo.Api\ProjetoExemplo.Api.csproj" />
   </ItemGroup>
 
 </Project>
