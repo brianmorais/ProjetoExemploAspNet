@@ -55,7 +55,7 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"moraisbrian_ProjetoExemploAspNet" /o:"moraisbrian" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml"
-          dotnet run --project ProjetoExemplo.sln --no-incremental
+          dotnet run --project ../../ProjetoExemplo.sln --no-incremental
           dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
       
