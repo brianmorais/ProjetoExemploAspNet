@@ -2,11 +2,12 @@
 using Moq;
 using ProjetoExemplo.Api.Controllers;
 using ProjetoExemplo.Application.Interfaces;
+using ProjetoExemplo.Tests.Base;
 using ProjetoExemplo.Tests.Mocks;
 
 namespace ProjetoExemplo.Tests.Controllers;
 
-public class CepControllerTest
+public class CepControllerTest : TestBase
 {
     private Mock<ICepCommand> _cepCommandMock = new Mock<ICepCommand>();
     private Mock<ILogger<CepController>> _loggerMock = new Mock<ILogger<CepController>>();
