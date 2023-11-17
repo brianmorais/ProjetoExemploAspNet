@@ -12,7 +12,7 @@ using ProjetoExemplo.Services.ViaCep;
 
 namespace ProjetoExemplo.Ioc;
 
-public class Setup
+public static class Setup
 {
     public static void Configure(IServiceCollection services, IConfiguration configuration)
     {

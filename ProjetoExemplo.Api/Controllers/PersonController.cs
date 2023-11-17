@@ -27,7 +27,7 @@ public class PersonController : ControllerBase
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
+            _logger.LogError(ex, "Error on get persons");
             return StatusCode(500);
         }
     }
@@ -37,12 +37,12 @@ public class PersonController : ControllerBase
     {
         try
         {
-            var response = await _personCommand.AddPerson(person);
+            await _personCommand.AddPerson(person);
             return Ok(person);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
+            _logger.LogError(ex, "Error on add person");
             return StatusCode(500);
         }
     }

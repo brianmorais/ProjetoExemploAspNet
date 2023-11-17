@@ -27,7 +27,7 @@ public class CepController : ControllerBase
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
+            _logger.LogError(ex, "Error on get addres by CPF");
             return StatusCode(500);
         }
     }
