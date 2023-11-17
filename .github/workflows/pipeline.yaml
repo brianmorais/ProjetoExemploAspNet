@@ -57,10 +57,7 @@ jobs:
     needs: ["analyze-sonar"]
     name: Build and push Docker image
     runs-on: ubuntu-latest
-
-    env:
-      DOCKER_IMAGE_NAME: moraisbrian/projetoexemplo
-
+    
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4.1.1
@@ -76,6 +73,6 @@ jobs:
       with:
         push: true
         tags: |
-          $DOCKER_IMAGE_NAME:v${{ github.run_number }}
-          $DOCKER_IMAGE_NAME:latest
+          moraisbrian/projetoexemplo:v${{ github.run_number }}
+          moraisbrian/projetoexemplo:latest
           
