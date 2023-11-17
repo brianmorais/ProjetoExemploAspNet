@@ -1,4 +1,4 @@
-name: SonarCloud
+name: Pipeline
 on:
   push:
     branches:
@@ -57,7 +57,7 @@ jobs:
     needs: ["analyze-sonar"]
     name: Build and push Docker image
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4.1.1
