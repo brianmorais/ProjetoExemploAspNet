@@ -1,11 +1,12 @@
 name: Docker Image
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows:
+      - "SonarCloud"
+    types:
+      - completed
 jobs:
   build-and-publish:
-    needs: ["analyze-sonar"]
     name: Build and push Docker image
     runs-on: ubuntu-latest
 
