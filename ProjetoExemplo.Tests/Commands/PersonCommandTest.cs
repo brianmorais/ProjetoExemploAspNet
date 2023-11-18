@@ -22,8 +22,8 @@ public class PersonCommandTest : TestBase
     {
         var persons = _personMock.GetPersonsMock();
         _personRepositoryMock.Setup(x => x.GetPersons()).ReturnsAsync(persons);
-
         var command = GetPersonCommand();
+
         var result = await command.GetPersons();
 
         Assert.Equal(persons.Count, result.Count());

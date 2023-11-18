@@ -1,7 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Moq;
 using ProjetoExemplo.Api.Controllers;
 using ProjetoExemplo.Application.Interfaces;
+using ProjetoExemplo.Application.Models;
 using ProjetoExemplo.Tests.Base;
 using ProjetoExemplo.Tests.Mocks;
 
@@ -24,10 +26,11 @@ public class CepControllerTest : TestBase
         var cep = "11224433";
         var address = _cepMock.GetAddressModelMock(cep);
         _cepCommandMock.Setup(x => x.GetAddressByCep(cep)).ReturnsAsync(address);
-
         var controller = GetCepController();
-        await controller.GetAddressByCep(cep);
 
+        var result = await controller.GetAddressByCep(cep);
+
+        Assert.IsType<ActionResult<AddressModel>>(result);
         _cepCommandMock.Verify(x => x.GetAddressByCep(cep), Times.Once);
     }
 }

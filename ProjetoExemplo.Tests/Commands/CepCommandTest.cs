@@ -24,8 +24,8 @@ public class CepCommandTest : TestBase
         var cep = "11224466";
         var address = _cepMock.GetAddressMock(cep);
         _cepServiceMock.Setup(x => x.GetAddressByCep(cep)).ReturnsAsync(address);
-
         var service = GetCepCommand();
+
         var result = await service.GetAddressByCep(cep);
 
         Assert.Equal(cep, result?.Cep);        
@@ -37,8 +37,8 @@ public class CepCommandTest : TestBase
         var cep = string.Empty;
         Address? address = null;
         _cepServiceMock.Setup(x => x.GetAddressByCep(cep)).ReturnsAsync(address);
-
         var service = GetCepCommand();
+
         var result = await service.GetAddressByCep(cep);
 
         Assert.Null(result);
