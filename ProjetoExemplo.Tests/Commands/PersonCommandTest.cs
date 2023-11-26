@@ -9,8 +9,7 @@ namespace ProjetoExemplo.Tests.Commands;
 
 public class PersonCommandTest : TestBase
 {
-    private Mock<IPersonRepository> _personRepositoryMock = new Mock<IPersonRepository>();
-    private PersonMock _personMock = new PersonMock();
+    private Mock<IPersonRepository> _personRepositoryMock = new();
 
     private IPersonCommand GetPersonCommand()
     {
@@ -20,7 +19,7 @@ public class PersonCommandTest : TestBase
     [Fact]
     public async Task ShouldGetPersons()
     {
-        var persons = _personMock.GetPersonsMock();
+        var persons = PersonMock.GetPersonsMock();
         _personRepositoryMock.Setup(x => x.GetPersons()).ReturnsAsync(persons);
         var command = GetPersonCommand();
 

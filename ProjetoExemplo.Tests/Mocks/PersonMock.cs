@@ -4,7 +4,7 @@ namespace ProjetoExemplo.Tests.Mocks;
 
 public class PersonMock
 {
-    public List<Person> GetPersonsMock()
+    public static List<Person> GetPersonsMock()
     {
         return new List<Person>
         {
@@ -21,7 +21,7 @@ public class PersonMock
         };
     }
 
-    public Person GetPersonMock()
+    public static Person GetPersonMock()
     {
         return GetPersonsMock().First();
     }

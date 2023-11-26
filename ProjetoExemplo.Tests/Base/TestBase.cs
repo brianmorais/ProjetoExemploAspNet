@@ -5,7 +5,7 @@ namespace ProjetoExemplo.Tests.Base;
 
 public class TestBase
 {
-    public Mapper SetupAutoMapper()
+    public static Mapper SetupAutoMapper()
     {
         var profile = new MappingSetup();
         var configuration = new MapperConfiguration(config => config.AddProfile(profile));

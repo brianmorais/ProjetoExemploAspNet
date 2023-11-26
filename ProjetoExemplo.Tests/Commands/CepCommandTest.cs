@@ -10,8 +10,7 @@ namespace ProjetoExemplo.Tests.Commands;
 
 public class CepCommandTest : TestBase
 {
-    private Mock<ICepService> _cepServiceMock = new Mock<ICepService>();
-    private CepMock _cepMock = new CepMock();
+    private Mock<ICepService> _cepServiceMock = new();
 
     private ICepCommand GetCepCommand()
     {
@@ -22,7 +21,7 @@ public class CepCommandTest : TestBase
     public async Task ShouldGetAddressByCep()
     {
         var cep = "11224466";
-        var address = _cepMock.GetAddressMock(cep);
+        var address = CepMock.GetAddressMock(cep);
         _cepServiceMock.Setup(x => x.GetAddressByCep(cep)).ReturnsAsync(address);
         var service = GetCepCommand();
 

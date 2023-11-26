@@ -5,7 +5,7 @@ namespace ProjetoExemplo.Tests.Mocks;
 
 public class CepMock
 {
-    public Address GetAddressMock(string cep = "11224433")
+    public static Address GetAddressMock(string cep = "11224433")
     {
         return new Address
         {
@@ -21,7 +21,7 @@ public class CepMock
         };
     }
 
-    public AddressModel GetAddressModelMock(string cep = "11224433")
+    public static AddressModel GetAddressModelMock(string cep = "11224433")
     {
         return new AddressModel
         {

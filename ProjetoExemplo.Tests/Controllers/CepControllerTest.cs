@@ -11,9 +11,8 @@ namespace ProjetoExemplo.Tests.Controllers;
 
 public class CepControllerTest : TestBase
 {
-    private Mock<ICepCommand> _cepCommandMock = new Mock<ICepCommand>();
-    private Mock<ILogger<CepController>> _loggerMock = new Mock<ILogger<CepController>>();
-    private CepMock _cepMock = new CepMock();
+    private Mock<ICepCommand> _cepCommandMock = new();
+    private Mock<ILogger<CepController>> _loggerMock = new();
 
     private CepController GetCepController()
     {
@@ -24,7 +23,7 @@ public class CepControllerTest : TestBase
     public async Task ShouldGetAddressByCep()
     {
         var cep = "11224433";
-        var address = _cepMock.GetAddressModelMock(cep);
+        var address = CepMock.GetAddressModelMock(cep);
         _cepCommandMock.Setup(x => x.GetAddressByCep(cep)).ReturnsAsync(address);
         var controller = GetCepController();
 
