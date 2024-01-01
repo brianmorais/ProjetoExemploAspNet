@@ -60,6 +60,7 @@ jobs:
 
   build-and-publish:
     name: Build and push Docker image
+    needs: ["analyze-sonar"]
     runs-on: ubuntu-latest
 
     steps:
