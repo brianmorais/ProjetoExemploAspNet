@@ -7,4 +7,4 @@ RUN dotnet publish -o /app/published-app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 as runtime
 WORKDIR /app
 COPY --from=build /app/published-app .
-ENTRYPOINT ["dotnet", "ProjetoExemplo.Api.dll"]
+ENTRYPOINT ["dotnet", "ProjetoExemploAspNet.Api.dll"]
