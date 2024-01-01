@@ -11,4 +11,4 @@ services:
     environment:
       - "ServiceUrls:ViaCep=https://viacep.com.br"
     ports:
-      - 8080:80
+      - 8080:8080
