@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/ProjetoExemplo.Api/bin/Debug/net7.0/ProjetoExemplo.Api.dll",
+            "program": "${workspaceFolder}/ProjetoExemploAspNet.Api/bin/Debug/net7.0/ProjetoExemploAspNet.Api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ProjetoExemplo.Api",
+            "cwd": "${workspaceFolder}/ProjetoExemploAspNet.Api",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {

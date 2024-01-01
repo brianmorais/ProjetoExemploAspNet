@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ProjetoExemplo.Api/ProjetoExemplo.Api.csproj",
+                "${workspaceFolder}/ProjetoExemploAspNet.Api/ProjetoExemploAspNet.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/ProjetoExemplo.Api/ProjetoExemplo.Api.csproj",
+                "${workspaceFolder}/ProjetoExemploAspNet.Api/ProjetoExemploAspNet.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/ProjetoExemplo.Api/ProjetoExemplo.Api.csproj"
+                "${workspaceFolder}/ProjetoExemploAspNet.Api/ProjetoExemploAspNet.Api.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
