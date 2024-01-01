@@ -1,6 +1,5 @@
 ﻿using Moq;
 using ProjetoExemploAspNet.Application.Commands;
-using ProjetoExemploAspNet.Application.Interfaces;
 using ProjetoExemploAspNet.Domain.Interfaces.Repositories;
 using ProjetoExemploAspNet.Tests.Base;
 using ProjetoExemploAspNet.Tests.Mocks;
@@ -11,7 +10,7 @@ public class PersonCommandTest : TestBase
 {
     private Mock<IPersonRepository> _personRepositoryMock = new();
 
-    private IPersonCommand GetPersonCommand()
+    private PersonCommand GetPersonCommand()
     {
         return new PersonCommand(_personRepositoryMock.Object, SetupAutoMapper());
     }

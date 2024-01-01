@@ -78,5 +78,5 @@ jobs:
       with:
         push: true
         tags: |
-          moraisbrian/projetoexemplo:v${{ github.run_number }}
-          moraisbrian/projetoexemplo:latest
+          moraisbrian/projetoexemploaspnet:v${{ github.run_number }}
+          moraisbrian/projetoexemploaspnet:latest
