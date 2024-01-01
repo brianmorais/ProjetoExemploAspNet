@@ -1,6 +1,5 @@
 ﻿using Moq;
 using ProjetoExemploAspNet.Application.Commands;
-using ProjetoExemploAspNet.Application.Interfaces;
 using ProjetoExemploAspNet.Domain.Interfaces.Services;
 using ProjetoExemploAspNet.Domain.ValueObjects;
 using ProjetoExemploAspNet.Tests.Base;
@@ -12,7 +11,7 @@ public class CepCommandTest : TestBase
 {
     private Mock<ICepService> _cepServiceMock = new();
 
-    private ICepCommand GetCepCommand()
+    private CepCommand GetCepCommand()
     {
         return new CepCommand(_cepServiceMock.Object, SetupAutoMapper());
     }
