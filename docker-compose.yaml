@@ -1,16 +1,14 @@
-version: '3'
+version: '3.7'
 
 services:
 
   api:
-    image: projetoexemplo/api
+    image: projetoexemploaspnet/api
     container_name: api
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://*:8080
       - "ServiceUrls:ViaCep=https://viacep.com.br"
     ports:
-      - 8080:8080
+      - 8080:80

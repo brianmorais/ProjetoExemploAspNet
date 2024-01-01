@@ -53,7 +53,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       shell: powershell
       run: |
-        .\.sonar\scanner\dotnet-sonarscanner begin /k:"moraisbrian_ProjetoExemploAspNet" /o:"moraisbrian" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+        .\.sonar\scanner\dotnet-sonarscanner begin /k:"moraisbrian_ProjetoExemploAspNetAspNet" /o:"moraisbrian" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
         dotnet build --configuration Release
         dotnet-coverage collect 'dotnet test' -f xml -o 'coverage.xml'
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
@@ -78,5 +78,5 @@ jobs:
       with:
         push: true
         tags: |
-          moraisbrian/projetoexemplo:v${{ github.run_number }}
-          moraisbrian/projetoexemplo:latest
+          moraisbrian/projetoexemploaspnet:v${{ github.run_number }}
+          moraisbrian/projetoexemploaspnet:latest
