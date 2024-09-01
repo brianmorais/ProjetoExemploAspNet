@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: projeto
-        image: moraisbrian/projetoexemploaspnet:latest
+        image: brianmorais/projetoexemploaspnet:latest
         resources:
           requests:
             memory: 100Mi
